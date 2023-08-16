@@ -20,9 +20,9 @@ populateTextarea();
 function populateTextarea() {
     const savedMessage = localStorage.getItem(LOCALSTORAGE_KEY);
     if (savedMessage) {
-      formData = JSON.parse(savedMessage);
-      input.value = formData.email;
-      textarea.value = formData.message;
+      formData = JSON.parse(savedMessage) || {};
+      input.value = formData.email || '';
+      textarea.value = formData.message || '';
     }
   }
 
